@@ -66,12 +66,17 @@ const domStringBuilder = () => {
     domString += `<div class="container">`
     domString += `<div class="row">`
     products.forEach((product) => {
-        domString += `<div class="col-4">`;
-        domString +=    `<h3>${product.title}</h3>`;
+        domString += `<div class="col-4 product">`;
+        domString +=    `<div class="card" style="width: 18rem;">`;
+        domString +=        `<img src="${product.imageUrl}" class="card-img-top" alt="cat">`
+        domString += `<div class="card-body">`
+        domString += `<h5 class="card-title">${product.title}</h5>`;
+        domString += `<p class="card-text">${product.description}</p>`;
+        domString += `<a href="https://www.google.com" class="btn btn-primary">Go somewhere</a>`;
+        domString += `</div>`;
+        domString += `</div>`;
         domString += `</div>`;
     })
-    domString += `</div>`
-    domString += `</div>`
     printToDom('product-container', domString);
 };
 
